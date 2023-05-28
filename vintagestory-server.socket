@@ -1,0 +1,7 @@
+# Thank you daretmavi! https://www.vintagestory.at/forums/topic/6300-linux-vs-server-with-systemd/
+
+[Unit]
+PartOf=vintagestory-server.service
+
+[Socket]
+ListenFIFO=%t/vintagestory-server.stdin

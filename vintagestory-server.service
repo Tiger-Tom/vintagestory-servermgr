@@ -1,0 +1,34 @@
+# Thank you daretmavi! https://www.vintagestory.at/forums/topic/6300-linux-vs-server-with-systemd/
+
+[Unit]
+Description=Vintage Story Server (vintagestory-servermgr)
+Wants=network.target
+After=network.target
+
+[Service]
+# Who
+User=vintagestory-server
+Group=vintagestory-server
+# Start
+WorkingDirectory=/usr/share/vintagestory-server/
+ExecStart=/usr/bin/mono VintagestoryServer.exe --dataPath /var/vintagestory/server-data/
+# Exit
+SuccessExitStatus=0 1
+Restart=on-failure
+RestartSec=30
+# IO
+Sockets=vintagestory-server.socket
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+# Security
+ProtectHome=false
+ProtectSystem=full
+PrivateDevices=true
+NoNewPrivileges=true
+PrivateTmp=true
+ReadWriteDirectories=/var/vintagestory/server-data/
+# /usr/share/vintagestory-server/
+
+[Install]
+WantedBy=multi-user.target
