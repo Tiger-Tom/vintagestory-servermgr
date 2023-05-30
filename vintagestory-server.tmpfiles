@@ -1,2 +1,2 @@
-d  /var/vintagestory               0775 vintagestory-server  -  -
-d  /var/vintagestory/server-data/  0775 vintagestory-server  -  -
+d  /var/vintagestory               0775  vintagestory-server  vintagestory-server
+d  /var/vintagestory/server-data/  0775  vintagestory-server  vintagestory-server
