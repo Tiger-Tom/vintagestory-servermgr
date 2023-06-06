@@ -18,5 +18,5 @@ The easiest way to install this is through the [vintagestory-servermgr](https://
 
 ## Migrate old saves
 - Copy everything in the old directory to `/var/vintagestory/server-data/`
-- Edit the `serverconfig.json` file and change the value of `SaveFileLocation` under `WorldConfig` to use `/var/vintagestory/server-data/Saves/...` instead of what it was previously using
+- Edit the `serverconfig.json` file and change the value of `SaveFileLocation` under `WorldConfig` to use `/var/vintagestory/server-data/Saves/...` instead of what it was previously using, and change the `ModPaths` to include `/var/vintagestory-server-data/Mods`
 - Change everything under `/var/vintagestory/server-data/` to be owned by the `vintagestory-server` user and group: `chown -R vintagestory-server:vintagestory-server /var/vintagestory/server-data/*`
